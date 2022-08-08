@@ -8,7 +8,12 @@ import matplotlib.pyplot as pyplot
 from matplotlib import style
 
 data = pd.read_csv('student-mat.csv', sep=';')
-data = data[['G1','G2','G3','studytime','failures','absences']]
+req_columns = []
+for x in data.columns:
+    if data[x].dtype=='int64':
+        req_columns.append(x)
+
+data = data[req_columns]
 predict = 'G3'
 
 x = np.array(data.drop([predict],1)) #attributes
@@ -23,7 +28,6 @@ best = 0
     linear = linear_model.LinearRegression()
     linear.fit(x_train, y_train)
     acc = linear.score(x_test, y_test)
-    print(acc)
 
     if acc>best:
         best = acc
