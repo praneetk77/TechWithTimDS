@@ -36,7 +36,7 @@ best = 0
 
 print("Best : ", best)
 
-pickle_in = open("studentmodel.pickle","rb")
+pickle_in = open("studentmodel.pickle", "rb")
 linear = pickle.load(pickle_in)
 
 print("Constants : ", linear.coef_)

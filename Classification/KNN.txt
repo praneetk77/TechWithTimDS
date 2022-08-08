@@ -1,0 +1,13 @@
+For KNN,
+
+in n-d space we have points corresponding to our training set
+then, for any new prediction, we calculate its distance from all other points
+then, we sort these distances and find the k-closest points
+in these k points, we need to look for the majority in clusters, and that is the predicted group for this point
+
+Points to remember :-
+K must be odd
+K must not be too high
+
+Drawbacks :-
+No point saving model, for every prediction, calculations are repeated
